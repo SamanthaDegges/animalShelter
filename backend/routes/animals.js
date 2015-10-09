@@ -26,16 +26,13 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res) {
   var newAnimal = new animal(req.body);
-  console.log(req.body);
-  // this.kind ??? =
-  // var default_value = $(this).attr("placeholder").replace(/\r/g, "");
-  // if (default_value == $(this).val())
-  //     $(this).val('');
-
   newAnimal.save(function(err, saved) {
     res.send(err || saved);
     })
   });
+
+
+
 //
 // router.delete('/:animalId', function(req, res){ //colon just means this will be a value
 //   animal.findByIdAndRemove(req.params.animalId, function(err, deletedAnimal) { //findByAndRemove is a built in mongoose function. Use the params of the request to find and remove the item with that value in the database.

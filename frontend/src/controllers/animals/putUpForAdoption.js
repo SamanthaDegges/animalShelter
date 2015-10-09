@@ -1,20 +1,20 @@
 var routerApp = angular.module('routerApp');
 
 routerApp.service('AddPet', function($http) {
-  this.createAndAddPet = function(kind, variety, gender, age, name, descriptors) {
+  this.createAndAddPet = function(kind, variety, gender, age, name, description) {
     var thisNewAnimal = {
       kind: kind,
       variety: variety,
       gender: gender,
       age: age,
       name: name,
-      descriptors: descriptors
-    }
+      description: description
+  }
     $http.post("http://localhost:3000/animals", thisNewAnimal).
-    then(res)=>{
-      console.log(res);
-    }, (res)=>{
-      console.log(res);
+    then(function(err){
+      console.log(err);
+    }, function(success){
+      console.log(success);
     })
   }
 });

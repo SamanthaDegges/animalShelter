@@ -14,3 +14,10 @@ routerApp.controller('showListingsCtrl', function($scope, $http) {
 
 });
 // CHANGE THESE ROUTES TO CLIENT SIDE FRONT END REQUESTS.?
+
+
+
+$("#consider").on("click", function(){
+  var $content = $(this).find('li').val();
+  $("list").text($content);
+})

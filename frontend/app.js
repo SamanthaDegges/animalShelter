@@ -32,9 +32,3 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
   });
 });
 // module.exports = angular;
-
-
-$("#consider").on("click", function(){
-  var $content = $(this).find('li').val();
-  $("list").text($content);
-})
