@@ -2,7 +2,7 @@ var routerApp = angular.module('routerApp');
 
 routerApp.service('AddPet', function($http) {
   this.createAndAddPet = function(animal) {
-    var thisNewAnimal = {
+    var newAnimal = {
       kind: animal.kind,
       variety: animal.variety,
       gender: animal.gender,
@@ -10,7 +10,7 @@ routerApp.service('AddPet', function($http) {
       name: animal.name,
       description: animal.description
   }
-    $http.post("http://localhost:3000/animals", thisNewAnimal).
+    $http.post("http://localhost:3000/animals", newAnimal).
     then(function(err){
       console.log(err);
     }, function(success){
@@ -20,7 +20,6 @@ routerApp.service('AddPet', function($http) {
 });
 
 routerApp.controller('putUpForAdoptionCtrl', function($scope, $http, AddPet){
-
   $scope.submitToPost = function() {
     AddPet.createAndAddPet($scope.animal);
   }
