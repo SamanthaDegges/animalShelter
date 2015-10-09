@@ -9,7 +9,7 @@ routerApp.controller('showListingsCtrl', function($scope, $http) {
   })
   .catch(function(err) {
     console.log("error!", err);
-    $scope.listing = "Our database cannot retrieve data at this time. Please try again later."
+    $scope.listings = "Our database cannot retrieve data at this time. Please try again later."
   })
 
 });
@@ -17,7 +17,7 @@ routerApp.controller('showListingsCtrl', function($scope, $http) {
 
 
 
-$("#consider").on("click", function(){
-  var $content = $(this).find('li').val();
-  $("list").text($content);
-})
+// $("#consider").on("click", function(){
+//   var $content = $(this).find('li').val();
+//   $("list").text($content);
+// })

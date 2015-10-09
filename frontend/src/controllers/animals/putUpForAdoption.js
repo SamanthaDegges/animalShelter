@@ -20,18 +20,9 @@ routerApp.service('AddPet', function($http) {
 });
 
 routerApp.controller('putUpForAdoptionCtrl', function($scope, $http, AddPet){
-// console.log(AddPet);
 
   $scope.submitToPost = function() {
-    AddPet.createAndAddPet($scope.kind, $scope.variety, $scope.gender, $scope.age, $scope.description);
-
-    // // console.log("testing to read form input: ", $scope.kindOfAnimal);
-    // console.log("submitToPost function triggered...")
-    // $http.post("http://localhost:3000/animals", animal)
-    //   .then(function(req, status){
-    //     console.log("Post request made! Req body: ", req.data);
-    //   })
-
+    AddPet.createAndAddPet($scope.kind, $scope.variety, $scope.gender, $scope.age, $scope.name, $scope.description);
+    //The order of args does matter here.
   }
 });
-//
