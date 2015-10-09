@@ -42,3 +42,12 @@ body {
   padding-left: 20%;
 }
 /*putupforadoptionpage*/
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+.imageFrame {
+  margin-bottom: 2em;
+}
