@@ -4,11 +4,11 @@ var Mongoose = require('mongoose');
 var Schema = Mongoose.Schema;
 
 var animalSchema =  Schema({
-  isAvailable: Boolean,
+  isAvailable: {type: Boolean, default: true, required: true},
   kind: String,
   variety: String,
-  gender: String,
-  Age: Number,
+  gender: {type: String, default: "not provided"},
+  age: {type: String, default: "unknown"},
   name: String,
   description: String,
   isGoodwithChildren: Boolean,
@@ -31,26 +31,29 @@ router.post('/', function(req, res) {
     })
   });
 
+router.put('/:animalId', function(req, res) {
+  animal.findByIdAndUpdate(req.params.animalId, { isAvailable: 'false'}, function(err, updated){
+    if (err || !updated) {
+      res.status(404).send(err || "animal not found in database.");
+    } else {
+        updated.save(function(err, saved) {
+          // if (err){
+          //   res.send("error saving.");
+          // } else {
+          res.send(err || saved);
+//          }
+        })
+      }
+  })
+});
 
-
-//
-// router.delete('/:animalId', function(req, res){ //colon just means this will be a value
-//   animal.findByIdAndRemove(req.params.animalId, function(err, deletedAnimal) { //findByAndRemove is a built in mongoose function. Use the params of the request to find and remove the item with that value in the database.
-//     if (err || !deletedAnimal){
-//       res.status(400).send(err || "item not found");
-//     } else {
-//       res.send(deletedAnimal);
-//     }
-//   })
-// });
-//
-// router.put('/:animalId/toggle', function(req, res){
-//   animal.findById(req.params.animalId, function(err, foundAnimal){
-//     if (err || !foundAnimal) {
-//       res.send(err || "animal not found.");
-//     } foundAnimal.save(function(err, updatedAnimal){
-//       res.send("Animal has been updated.", updatedAnimal);
-//     })
-//   })
-// });
+router.delete('/:animalId', function(req, res) {
+  animal.findByIdAndRemove(req.params.animalId, function(err, deletedAnimal) {
+      if (err || !deletedAnimal ){
+        res.status(400).send(err || "no such ID.");
+      } else {
+        res.send('completed removal of: ', deletedAnimal);
+      }
+  });
+});
 module.exports = router;
