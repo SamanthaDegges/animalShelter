@@ -1,14 +1,14 @@
 var routerApp = angular.module('routerApp');
 
 routerApp.service('AddPet', function($http) {
-  this.createAndAddPet = function(kind, variety, gender, age, name, description) {
+  this.createAndAddPet = function(animal) {
     var thisNewAnimal = {
-      kind: kind,
-      variety: variety,
-      gender: gender,
-      age: age,
-      name: name,
-      description: description
+      kind: animal.kind,
+      variety: animal.variety,
+      gender: animal.gender,
+      age: animal.age,
+      name: animal.name,
+      description: animal.description
   }
     $http.post("http://localhost:3000/animals", thisNewAnimal).
     then(function(err){
@@ -22,7 +22,6 @@ routerApp.service('AddPet', function($http) {
 routerApp.controller('putUpForAdoptionCtrl', function($scope, $http, AddPet){
 
   $scope.submitToPost = function() {
-    AddPet.createAndAddPet($scope.kind, $scope.variety, $scope.gender, $scope.age, $scope.name, $scope.description);
-    //The order of args does matter here.
+    AddPet.createAndAddPet($scope.animal);
   }
 });
