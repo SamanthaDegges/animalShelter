@@ -1,5 +1,5 @@
 body {
-  padding: 1em;
+  margin: 1em;
   font-family: 'Righteous', cursive;
   color: #337ab7;
 }
@@ -16,20 +16,31 @@ body {
   border-bottom: 4px solid #f4ab4a;
 }
 
-.sidebar {
-  padding: .5em;
-}
-
-.ad {
-  margin: .5em;
-}
-.pair {
-  margin: .5em;
-  border: 4px solid #e8e7e5;
-}
-.top-divider{
+.top-divider {
   margin: .25em;
   border-top: 4px solid #e8e7e5;
+}
+.successStory p {
+  padding: 0 10% 0 10%;
+}
+.successStory img {
+  margin: .7em 0 .7em 0;
+  border: 4px solid #e8e7e5;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right-side {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+.sidebar{
+  border-left: 1px solid #e8e7e5;
+}
+
+.sidebar img{
+  padding-top: .5em;
 }
 
 .footer {
@@ -38,9 +49,6 @@ body {
   color: #a8a6a1;
 }
 
-#pairedClients {
-  padding-left: 20%;
-}
 /*putupforadoptionpage*/
 .center-block {
     display: block;

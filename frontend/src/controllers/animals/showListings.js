@@ -10,14 +10,18 @@ routerApp.controller('showListingsCtrl', function($scope, $http) {
   .catch(function(err) {
     console.log("error!", err);
     $scope.listings = "Our database cannot retrieve data at this time. Please try again later."
-  })
+  });
+  $scope.total = "test";
+  $scope.consider = function(){
+    $scope.considered = "test";
+    console.log("this function runs.");
+  }
+
 
 });
-// CHANGE THESE ROUTES TO CLIENT SIDE FRONT END REQUESTS.?
 
 
-
-// $("#consider").on("click", function(){
-//   var $content = $(this).find('li').val();
+// $scope.consider.on("click", function(){
+//   $scope.consider = $scope.listing
 //   $("list").text($content);
 // })

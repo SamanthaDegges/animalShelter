@@ -3,6 +3,7 @@ var router = express.Router();
 var Mongoose = require('mongoose');
 var Schema = Mongoose.Schema;
 
+
 var animalSchema =  Schema({
   isAvailable: {type: Boolean, default: true, required: true},
   kind: String,
