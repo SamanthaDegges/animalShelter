@@ -8,6 +8,7 @@ var fs = require('fs');
 
 var routes = require('./routes/index');
 var animals = require('./routes/animals');
+var clients = require('./routes/clients');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/animals', animals);
+app.use('/client', client);
 
 app.get('/', function(req, res) {
   var index = path.join(__dirname, 'public', 'views', 'index.html');
