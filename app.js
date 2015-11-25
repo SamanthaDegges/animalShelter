@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/animals', animals);
-app.use('/client', client);
+app.use('/clients', client);
 
 app.get('/', function(req, res) {
   var index = path.join(__dirname, 'public', 'views', 'index.html');
