@@ -8,7 +8,8 @@ var app = require('../app');
 var debug = require('debug')('animalShelter:server');
 var http = require('http');
 var Mongoose = require('mongoose');
-Mongoose.connect('mongodb://localhost/animalShelter');
+Mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/animalShelter');
+
 /**
  * Get port from environment and store in Express.
  */
