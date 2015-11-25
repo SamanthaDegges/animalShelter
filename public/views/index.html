@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feral Ferret Farm</title>
+  <link href='https://fonts.googleapis.com/css?family=Righteous|Lobster+Two:400italic' rel='stylesheet' type='text/css'>
+  <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+  <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel = "stylesheet" href = "stylesheets/style.css">
+  <script src = "app.js"></script>
+  <script src = "../javascripts/controllers/animals/showListings.js"></script>
+  <script src = "../javascripts/controllers/animals/putUpForAdoption.js"></script>
+</head>
+<body ng-app="routerApp">
+  <div class="container-fluid">
+
+
+    <ul class="nav nav-pills">
+      <!-- class="active" -->
+      <li class="navbar-text" role="presentation"><p><a ui-sref="home">Feral Ferret Farm & More</a></p></li>
+      <li ><a ui-sref="showListings">View Listings</a></li>
+      <li  role="navbar-text  presentation"><a ui-sref="putUpforAdoption">Surrender an Animal</a></li>
+      <li role="navbar-text  presentation"><a ui-sref="clients">Sign Up</a></li>
+    </ul>
+
+    <div class="top-divider" ui-view></div>
+
+
+
+  <!-- Footer -->
+  <div class="text-center top-divider">
+    <ul class="footer list-inline">
+      <li>Copyright 2015</li>
+      <li>Samantha Degges</li>
+    </ul>
+  </div>
+
+</div> <!--container end-->
+
+  <script src = "https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
