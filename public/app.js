@@ -21,8 +21,9 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
   })
 
   .state('clients', {
-      url: '/clientSignup',
-      templateUrl: 'views/partials/clientSignUp.html'
+      url: '/clientSignUp',
+      templateUrl: 'views/partials/clientSignUp.html',
+      controller: "clientSignUpCtrl"
   })
 
   .state('showListings', {
