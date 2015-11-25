@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', routes);
+app.use('/clients', client);
 app.use('/animals', animals);
 
 app.get('/', function(req, res) {
