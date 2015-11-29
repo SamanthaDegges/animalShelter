@@ -8,6 +8,7 @@ var app = require('../app');
 var debug = require('debug')('animalShelter:server');
 var http = require('http');
 var Mongoose = require('mongoose');
+
 Mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/animalShelter');
 
 /**
