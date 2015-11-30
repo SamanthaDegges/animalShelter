@@ -1,6 +1,6 @@
 var routerApp = angular.module('routerApp');
 
-routerApp.controller('showListingsCtrl', function($scope, $http) {
+routerApp.controller('showListingsCtrl', function($scope, $http, $stateParams) {
   $scope.listings;
   console.log("The controller is working!!!");
 
@@ -15,12 +15,15 @@ routerApp.controller('showListingsCtrl', function($scope, $http) {
   });
 
 
-  $scope.adoptPet = function(index){
-    var animalId = {
-      id: $scope.listings[index]._id
-    }
+  $scope.adoptPet = function(animalId){
     console.log('button clicked. id is ', animalId);
-    return $http.delete("/animals", animalId);
+    $http.delete("/animals" + '/' + animalId)
+    .then(function(res) {
+      console.log(res,'done');
+    })
+    .catch(function(err) {
+      console.log(err,'err');
+    });
   }
 
 });
