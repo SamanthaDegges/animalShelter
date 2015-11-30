@@ -2,7 +2,7 @@ var routerApp = angular.module('routerApp');
 
 routerApp.controller('showListingsCtrl', function($scope, $http) {
   console.log("The controller is working!!!");
-  $http.get('https://localhost:3000/animals')
+  $http.get('/animals')
   .then(function(res) {
     console.log("Get Request works. Heres data: ",res.data);
     $scope.listings = res.data;

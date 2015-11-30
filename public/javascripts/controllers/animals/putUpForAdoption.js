@@ -10,7 +10,7 @@ routerApp.service('AddPet', function($http) {
       name: animal.name,
       description: animal.description
   }
-    $http.post("https://localhost:3000/animals", newAnimal).
+    $http.post("/animals", newAnimal).
     then(function(err){
       console.log(err);
     }, function(success){
