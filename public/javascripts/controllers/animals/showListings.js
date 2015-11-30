@@ -1,27 +1,26 @@
 var routerApp = angular.module('routerApp');
 
 routerApp.controller('showListingsCtrl', function($scope, $http) {
+  $scope.listings;
   console.log("The controller is working!!!");
+
   $http.get('/animals')
   .then(function(res) {
-    console.log("Get Request works. Heres data: ",res.data);
     $scope.listings = res.data;
+    console.log(res.data);
   })
   .catch(function(err) {
     console.log("error!", err);
     $scope.listings = "Our database cannot retrieve data at this time. Please try again later."
   });
-  $scope.total = "test";
-  $scope.consider = function(){
-    $scope.considered = "test";
-    console.log("this function runs.");
+
+
+  $scope.adoptPet = function(index){
+    var animalId = {
+      id: $scope.listings[index]._id
+    }
+    console.log('button clicked. id is ', animalId);
+    return $http.delete("/animals", animalId);
   }
 
-
 });
-
-
-// $scope.consider.on("click", function(){
-//   $scope.consider = $scope.listing
-//   $("list").text($content);
-// })
