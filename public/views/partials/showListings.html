@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-6 col-md-6 col-sm-12">
+  <div class="col-lg-6 col-lg-offset-3 col-md-8 col-lg-offset-2 col-sm-12">
     <h4>Critters available for adoption today: </h4>
     <ol id = "listings">
       <li ng-repeat = "listing in listings track by $index">
@@ -8,16 +8,16 @@
         <br><strong>Gender: </strong>{{listing.gender}}  <strong>Age: </strong>{{listing.age}}
         <br><strong>Description: </strong>{{listing.description}}
         <br>
-        <button type="button" class="btn btn-primary">Consider {{listing.name}}</button>
+        <button type="button" class="btn btn-primary" ng-click="adoptPet(listing._id)">Adopt {{listing.name}}</button>
         <br>
       </li>
     </ol>
   </div>
-  <div class="col-lg-6 col-md-6 col-sm-12">
+  <!-- <div class="col-lg-6 col-md-6 col-sm-12">
     You've considered {{total}} critters total.
     <ul class="totalCritters">
-      <!-- <li ng-repeat="considered in considereds track by $index">{{listing}}</li> -->
+      <li ng-repeat="considered in considereds track by $index">{{listing}}</li>
     </ul>
     <button type="button" class="btn btn-lg btn-primary" disabled="disabled">Adopt</button>
-  </div>
+  </div> -->
 </div>
