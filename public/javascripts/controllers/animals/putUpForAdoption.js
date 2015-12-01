@@ -11,11 +11,11 @@ routerApp.service('addPet', function($http) {
       description: animal.description
   }
     $http.post("/animals", newAnimal).
-    then(function(err){
-      console.log(err);
-      alert("There's been an error saving this addition to the database. Please try again.")
-    }, function(success){
-      console.log(success);
+    then(function(res){
+      // console.log(res + 'added');
+    }, function(err){
+      alert("There's been an error saving this addition to the database. Please try again. Error: "+ err.data)
+      console.log("Error: " + err);
     })
   }
 });

@@ -17,12 +17,13 @@ routerApp.controller('showListingsCtrl', function($scope, $http, $stateParams) {
 
   $scope.adoptPet = function(animalId){
     console.log('button clicked. id is ', animalId);
-    $http.delete("/animals" + '/' + animalId)
+    $http.delete("/animals/" + animalId)
     .then(function(res) {
       console.log(res,'done');
     })
     .catch(function(err) {
       console.log(err,'err');
+      alert("There's been an error. Please refresh and try again. Error: "+ err.data)
     });
   }
 
