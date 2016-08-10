@@ -23,5 +23,6 @@ routerApp.service('addPet', function($http) {
 routerApp.controller('putUpForAdoptionCtrl', function($scope, $http, addPet){
   $scope.submitToPost = function() {
     addPet.createAndAddPet($scope.animal);
+    $scope.animal = "";
   }
 });
